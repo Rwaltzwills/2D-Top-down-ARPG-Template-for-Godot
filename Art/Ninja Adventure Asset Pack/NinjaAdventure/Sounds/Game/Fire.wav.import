@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3vnvfg1m2quv"
+path="res://.godot/imported/Fire.wav-924110a1cc8c7eab87327e933c5823cb.sample"
+
+[deps]
+
+source_file="res://Art/Ninja Adventure Asset Pack/NinjaAdventure/Sounds/Game/Fire.wav"
+dest_files=["res://.godot/imported/Fire.wav-924110a1cc8c7eab87327e933c5823cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

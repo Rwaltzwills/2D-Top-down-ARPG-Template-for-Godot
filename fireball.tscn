@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4ivwfi11y06q"]
+
+[ext_resource type="Texture2D" uid="uid://2s58on5oa3gk" path="res://Art/Ninja Adventure Asset Pack/NinjaAdventure/FX/Projectile/Fireball.png" id="1_mrb1t"]
+[ext_resource type="Script" path="res://fireball.gd" id="1_nxiwr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pn2d"]
+atlas = ExtResource("1_mrb1t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkese"]
+atlas = ExtResource("1_mrb1t")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo50o"]
+atlas = ExtResource("1_mrb1t")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nn7t1"]
+atlas = ExtResource("1_mrb1t")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6yub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pn2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkese")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo50o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nn7t1")
+}],
+"loop": true,
+"name": &"Drop",
+"speed": 30.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j0jy3"]
+radius = 28.4605
+
+[node name="Fireball" type="RigidBody2D"]
+collision_mask = 0
+script = ExtResource("1_nxiwr")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_v6yub")
+animation = &"Drop"
+frame_progress = 0.875596
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j0jy3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

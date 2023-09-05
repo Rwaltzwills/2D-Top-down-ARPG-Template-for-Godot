@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cawaodv10tv5w"
+path="res://.godot/imported/Fx.wav-b4da85d4dc0c6f543d023a23c1715a97.sample"
+
+[deps]
+
+source_file="res://Art/Ninja Adventure Asset Pack/NinjaAdventure/Sounds/Game/Fx.wav"
+dest_files=["res://.godot/imported/Fx.wav-b4da85d4dc0c6f543d023a23c1715a97.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
