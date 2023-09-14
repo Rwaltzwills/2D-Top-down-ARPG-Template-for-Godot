@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://b02dkdt5w4w1w"]
+
+[ext_resource type="Script" path="res://player_top_down.gd" id="1_h8tay"]
+[ext_resource type="Texture2D" uid="uid://clyb4b5j584hv" path="res://Art/Ninja Adventure Asset Pack/NinjaAdventure/Actor/Characters/BlueNinja/SpriteSheet.png" id="2_tjpfv"]
+
+[sub_resource type="Animation" id="Animation_augh6"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ojtjv"]
+resource_name = "walk_down"
+length = 0.5
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4d7ew"]
+_data = {
+"RESET": SubResource("Animation_augh6"),
+"walk_down": SubResource("Animation_ojtjv")
+}
+
+[node name="PlayerTopDown" type="CharacterBody3D"]
+script = ExtResource("1_h8tay")
+speed = 5
+jump_height = 100.0
+jump_time_to_peak = 0.5
+jump_time_to_descent = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4d7ew")
+}
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.639, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+cast_shadow = 0
+pixel_size = 1.0
+billboard = 1
+texture = ExtResource("2_tjpfv")
+hframes = 4
+vframes = 7
